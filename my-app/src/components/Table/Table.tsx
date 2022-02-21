@@ -1,25 +1,29 @@
-import React from 'react';
+import * as S from '../../style';
+const Table = (props: any = []) => {
+  const { userData } = props;
 
-const Table = (data: any = []) => {
-  if (data) {
-    console.log(data);
-    return;
-  }
+  const thKeys = ['Name', 'SurName', 'Country', 'Email'];
+
   return (
-    <table>
-      <tbody>
-        <tr>
-          <th></th>
-        </tr>
-        {data.map((item: any) => (
-          <tr key={item.id}>
-            <td>{item.first_name}</td>
-            <td>{item.last_name}</td>
-            <td>{item.email}</td>
+    <S.TableStyled>
+      <table>
+        <tbody>
+          <tr>
+            {thKeys.map((thItem, index) => (
+              <th key={index}>{thItem}</th>
+            ))}
           </tr>
-        ))}
-      </tbody>
-    </table>
+          {userData.map((item: any) => (
+            <tr key={item.id}>
+              <td>{item.first_name}</td>
+              <td>{item.last_name}</td>
+              <td>{item.country}</td>
+              <td>{item.email}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </S.TableStyled>
   );
 };
 export default Table;
