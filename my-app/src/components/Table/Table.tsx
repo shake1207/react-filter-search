@@ -1,3 +1,4 @@
+import React from 'react';
 import * as S from '../../style';
 import { motion } from 'framer-motion';
 const Table = (props: any = []) => {
