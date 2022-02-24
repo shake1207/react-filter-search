@@ -1,4 +1,5 @@
 import * as S from '../../style';
+import { motion } from 'framer-motion';
 const Table = (props: any = []) => {
   const { userData } = props;
 
@@ -14,12 +15,12 @@ const Table = (props: any = []) => {
             ))}
           </tr>
           {userData.map((item: any) => (
-            <tr key={item.id}>
+            <motion.tr layout key={item.id}>
               <td>{item.first_name}</td>
               <td>{item.last_name}</td>
               <td>{item.country}</td>
               <td>{item.email}</td>
-            </tr>
+            </motion.tr>
           ))}
         </tbody>
       </table>
